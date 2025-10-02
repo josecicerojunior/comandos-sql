@@ -1,21 +1,9 @@
-INSERT INTO produtos_informatica (nome, categoria, marca, preco, quantidade_estoque, descricao, data_cadastro) VALUES
-('Notebook Dell Inspiron 15', 'Notebook', 'Dell', 3500.00, 10, 'Notebook Dell 15.6" i5, 8GB RAM, 256GB SSD', '2025-02-01'),
-('Mouse Gamer Logitech G502', 'Periférico', 'Logitech', 250.00, 30, 'Mouse gamer com 11 botões programáveis', '2025-02-01'),
-('Teclado Mecânico HyperX Alloy', 'Periférico', 'HyperX', 450.00, 15, 'Teclado mecânico switches Red', '2025-02-02'),
-('Monitor LG UltraWide 29"', 'Monitor', 'LG', 1300.00, 8, 'Monitor LG 29 polegadas UltraWide Full HD', '2025-02-02'),
-('HD Externo Seagate 2TB', 'Armazenamento', 'Seagate', 420.00, 25, 'HD externo USB 3.0 2TB', '2025-02-03'),
-('SSD Kingston NV1 1TB', 'Armazenamento', 'Kingston', 380.00, 20, 'SSD NVMe PCIe 1TB', '2025-02-03'),
-('Placa de Vídeo NVIDIA RTX 4060', 'Hardware', 'NVIDIA', 2800.00, 5, 'GPU RTX 4060 8GB GDDR6', '2025-02-04'),
-('Memória RAM Corsair Vengeance 16GB', 'Hardware', 'Corsair', 320.00, 40, 'DDR4 3200MHz 16GB', '2025-02-04'),
-('Fonte Corsair 650W 80 Plus Bronze', 'Hardware', 'Corsair', 450.00, 12, 'Fonte ATX 650W certificação 80 Plus Bronze', '2025-02-05'),
-('Gabinete Gamer Redragon', 'Hardware', 'Redragon', 380.00, 10, 'Gabinete com lateral em vidro temperado e LED', '2025-02-05'),
-('Headset Gamer Razer Kraken', 'Periférico', 'Razer', 520.00, 18, 'Headset com som surround 7.1', '2025-02-06'),
-('Webcam Logitech C920', 'Periférico', 'Logitech', 480.00, 14, 'Webcam Full HD 1080p com microfone', '2025-02-06'),
-('Impressora HP DeskJet Ink Advantage', 'Impressora', 'HP', 650.00, 7, 'Impressora multifuncional jato de tinta', '2025-02-07'),
-('Roteador TP-Link Archer AX50', 'Rede', 'TP-Link', 720.00, 9, 'Roteador Wi-Fi 6 Dual Band', '2025-02-07'),
-('Switch Gigabit 8 Portas D-Link', 'Rede', 'D-Link', 380.00, 11, 'Switch de 8 portas 10/100/1000 Mbps', '2025-02-08'),
-('Cadeira Gamer ThunderX3', 'Acessório', 'ThunderX3', 950.00, 6, 'Cadeira gamer com ajuste ergonômico', '2025-02-08'),
-('Mousepad Gamer SteelSeries QcK', 'Acessório', 'SteelSeries', 120.00, 50, 'Mousepad grande antiderrapante', '2025-02-09'),
-('Controle Xbox Series X', 'Periférico', 'Microsoft', 420.00, 20, 'Controle sem fio para PC e Xbox Series', '2025-02-09'),
-('Notebook Lenovo IdeaPad 3', 'Notebook', 'Lenovo', 3100.00, 9, 'Notebook Lenovo 15.6" Ryzen 5, 8GB RAM, 512GB SSD', '2025-02-10'),
-('Tablet Samsung Galaxy Tab S6 Lite', 'Tablet', 'Samsung', 2100.00, 13, 'Tablet Android 10.4" com S-Pen', '2025-02-10');
+CREATE TABLE Produtos (
+    id_produto INT AUTO_INCREMENT PRIMARY KEY,
+    nome_produto VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    preco DECIMAL(10,2) NOT NULL,
+    estoque INT NOT NULL,
+    id_fornecedor INT,
+    FOREIGN KEY (id_fornecedor) REFERENCES Fornecedores(id_fornecedor)
+);
